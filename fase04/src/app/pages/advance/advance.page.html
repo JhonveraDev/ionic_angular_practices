@@ -1,0 +1,27 @@
+<ion-header>
+  <app-header titulo="advance"></app-header>
+</ion-header>
+
+<ion-content>
+  <ion-buttons>
+    <ion-button (click)="on()">
+      <ion-icon [name]="favorito ? 'heart': 'heart-outline' " color="danger"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <ion-button (click)="onClick()" expand="block" >
+    Action Sheeta
+  </ion-button>
+
+  <ion-button (click)="onClickAlert()" expand="block">
+    Alert
+  </ion-button>
+
+  <ion-button (click)="presentAlertPrompt()" expand="block">
+    Data Information
+  </ion-button>
+
+
+
+
+</ion-content>

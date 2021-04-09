@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="punt">
+    <ion-buttons slot="start">
+      <ion-back-button color="secondary" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title >Puntos de Venta</ion-title> 
+  </ion-toolbar>
+</ion-header>
+  <ion-toolbar>
+    <ion-searchbar (ionChange)="buscarData($event)" animated placeholder="Busqueda ..."></ion-searchbar>
+    <ion-avatar slot="end">
+      <img src="../../assets/icono8.jpg" alt="">
+    </ion-avatar>
+  </ion-toolbar>
+<ion-content [fullscreen]="true">
+  <!-- <ion-list *ngIf="arrayData.length === 0">
+    <ion-item *ngFor="let obs of arrayData">
+      <ion-label>
+        <ion-skeleton-text animated style="width: 40%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+      </ion-label>
+    </ion-item>
+  </ion-list> -->
+  <ion-list *ngIf="arrayData.length > 0">
+    <ion-item *ngFor="let data of arrayData | filtro:textoBuscar">
+      <ion-label>
+        <div class="container">
+          <div class="items">
+            <div>
+              {{data.id}}
+              <strong>{{data.name}}</strong>
+            </div>
+            <div>
+              {{data.address.street}}
+            </div>
+            <div>
+              {{data.address.geo.lng}}
+              {{data.address.city}}
+            </div>
+          </div>       
+          <ion-avatar [routerLink]="['/menumeasurement', data.id, data.name]">
+            <img src="../../assets/icons8-small-business-48.jpg">
+          </ion-avatar>
+        </div> 
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

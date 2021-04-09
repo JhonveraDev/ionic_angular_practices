@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding" style="text-align:center">
+    <ion-label>
+      <strong>COORDENADAS</strong>
+    </ion-label>
+  </div>
+
+  <div class="ion-padding">
+    <ion-item>
+      <ion-label>LATITUD: {{latitud}}</ion-label>
+    </ion-item>
+  </div>
+  <div class="ion-padding">
+    <ion-item>
+      <ion-label>LOGITUD: {{longitud}}</ion-label>
+    </ion-item>
+  </div>
+
+  <div class="ion-padding">
+    <ion-button expand="full" (click)="obtenerCoordenadas()">
+      <ion-icon slot="start" name="location-outline"></ion-icon>LOCALIZAR
+    </ion-button>
+  </div>
+  
+</ion-content>

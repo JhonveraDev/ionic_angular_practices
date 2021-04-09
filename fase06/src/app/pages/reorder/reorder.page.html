@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="primary">List -  Reorder</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="enable = !enable" >Toogle</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-reorder-group [disabled]="enable" (ionItemReorder)="doReorder($event)">
+      <ion-item *ngFor="let hero of personajes">
+        <ion-label>{{hero}}</ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+
+
+  <ion-button expand="full" (click)="presentLoading()">Default</ion-button>
+
+</ion-content>
